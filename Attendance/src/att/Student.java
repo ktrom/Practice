@@ -30,11 +30,6 @@ public class Student {
 		Date newDate = getDateObject(d);
 		attendance.put(newDate, false);
 	}
-	
-	public Set<Date> getAbsentDates()
-	{	
-		
-	}
 	public static Student findStudentObject(String lastname)
 	{
 		return studentsLastNames2.get(lastname);
