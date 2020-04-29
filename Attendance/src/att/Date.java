@@ -2,12 +2,28 @@ package att;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
+import static java.util.Map.entry; 
 
 public class Date {
 	static Date currentDate;
-	static HashMap<Integer, String> monthNames = new HashMap<Integer, String>();
+	static Map<Integer, String> monthNames = Map.ofEntries(
+													entry(1, "January"),
+													entry(2, "February"),
+													entry(3, "March"),
+													entry(4, "April"),
+													entry(5, "May"),
+													entry(6, "June"),
+													entry(7, "July"),
+													entry(8, "August"),
+													entry(9, "September"),
+													entry(10,"October"),
+													entry(11,"November"),
+													entry(12,"December"));
+			
 	static HashMap<Integer, Integer> monthDays = new HashMap<Integer, Integer>();
 	static HashMap<String, Date> datesByString = new HashMap<String, Date>(); 
+	
 	private int month, day, year;
 	
 	public Date(int month, int day, int year)
@@ -22,7 +38,7 @@ public class Date {
 	{
 		return monthNames.get(month) + " " + day + " " + year;
 	}
-	private void initializeDateClass()
+	private static void initializeDateClass()
 	{
 		monthNames.put(1, "January");
 		monthDays.put(1, 31);
